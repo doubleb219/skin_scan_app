@@ -47,8 +47,11 @@ class _HomeScreenState extends State<HomeScreen> {
             child: const Text('Take Photo'),
           ),
           TextButton(
-            onPressed: () {
+            onPressed: () async {
               Navigator.pop(context);
+              await Future.delayed(
+                const Duration(milliseconds: 100),
+              ); // Small delay
               _pickImage(ImageSource.gallery);
             },
             child: const Text('Upload from Gallery'),
@@ -65,7 +68,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Skin Scan'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('Skin Scan'),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

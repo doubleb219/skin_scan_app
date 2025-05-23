@@ -15,13 +15,22 @@ class SkinScanApp extends StatelessWidget {
     return MaterialApp(
       title: 'Skin Scan',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(
+            color: Colors.white, // Set back button color
+          ),
+          titleTextStyle: TextStyle(
+            color: Colors.white, // Set your desired color
+            fontSize: 20,
+          ),
+        ),
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
         textTheme: const TextTheme(
           headlineMedium: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
-            color: Colors.black87,
+            color: Colors.white,
           ),
           bodyMedium: TextStyle(fontSize: 16, color: Colors.black54),
         ),
